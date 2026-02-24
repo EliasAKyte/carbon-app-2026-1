@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_home">
+  <div class="container">
+
+    <div class="header_home">
+      <div class="box"> 
+        <h1 style="font-size:55px; font-family: 'Times New Roman', Times, serif;">
+          <span class="text-logo">Home</span>
+        </h1>
+
+        <p style="text-align:left;">
+          Welcome to Carbon App. We are a team of students in economics and technology, working together to explore how digital tools can support more sustainable decisions. Through our project, we combine academic knowledge with practical development to better understand climate impact, data analysis, and responsible innovation. Our goal is to transform complex environmental information into simple, accessible insights that help individuals and organizations take meaningful action. By bridging theory and practice, we aim to demonstrate how technology can contribute to a greener and more informed future.
+        </p>
+
+        <div class="container_buttons_links_header_home">
+          <div class="btn">
+            <a href="{{url_for('users.register')}}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Register</a>
+          </div>
+          <div class="btn">
+            <a href="{{url_for('users.login')}}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Login</a>
+          </div>
+        </div>  
+      </div>
+
+      <div class="box">
+        <img 
+          src="{{url_for('static', filename='icons/carbon_app.svg')}}"
+          width="325" 
+          height="325"
+          alt=""/>
+      </div>
+    </div>
+
+  </div>
+</section> 
+
+<!-- Developers -->
+<section class="section_developers">
+  <div class="container">
+
+    <div class="developers" style="display:block;">
+      <h1 style="text-align:center; color:#568c63;"> Our Team</h1>
+      <p style="color:#fff;">
+        We are a team of economists and app developers passionate about turning data into smart, practical solutions. Together we design and build technology that helps people make better, more sustainable decisions.
+      </p>      
+    </div>
+
+    <div class="developers">
+      <div class="box">
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGEs456ZlnQlg/profile-displayphoto-scale_400_400/B4EZvN1ywzIwAg-/0/1768684990746?e=1772668800&v=beta&t=yisTf_dk9hbNXQXv_X7zhUZoCUBjF2Dn0P35TwNsaXU" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Elias Kyte</h3>
+        <p>
+          Elias Kyte was born in 2005 and is originally from Bergen, Norway. He is currently studying at the Norwegian School of Economics (NHH). Prior to beginning his studies, he completed his military service. With his background from both the armed forces and a leading business school, Elias represents a combination of discipline, dedication, and academic ambition.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/elias-kyte-612b91268/" target="_blank">Linkedin</a>
+        </div> 
+      </div>
+
+      <div class="box">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEXE_lwqsLMAg/profile-displayphoto-scale_400_400/B4DZonDX6NKIAg-/0/1761591787920?e=1772668800&v=beta&t=KKKjh1dd6hceIe0D1fQw3xxRfB6XWAPZWu6IXNK6Fsw" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Trond Heløe</h3>
+        <p>
+          Trond Heløe was born in 2004 and is currently studying at the Norwegian School of Economics (NHH). Before starting his academic journey, he completed his military service, gaining valuable experience and discipline. Through his background in both the armed forces and business education, Trond demonstrates commitment, responsibility, and strong academic motivation.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/trond-heidenreich-hel%C3%B8e-604a61255/" target="_blank">Linkedin</a>
+        </div> 
+      </div>           
+
+      <div class="box">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Filip Odgaard Dimcevski</h3>
+        <p>
+          Filip was born in 2005 and is originally from Bergen, Norway. He is currently studying at the Norwegian School of Economics (NHH). As a student at one of Norway’s leading business schools, Filip is building a strong academic foundation while developing skills in economics and business.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.fotball.no/fotballdata/kamp/?fiksId=8817616" target="_blank">Linkedin</a>
+        </div> 
+      </div>     
+    </div>
+
+    <div class="developers">
+      <div class="box2">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Sarah Hess</h3>
+        <p>
+          We are a team of economists and app developers passionate about turning data into smart, practical solutions. Together we design and build technology that helps people make better, more sustainable decisions.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/sarah-he%C3%9F-613b37297/" target="_blank">Linkedin</a>
+        </div> 
+      </div>
+
+      <div class="box2">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQHK67KR8t5T_g/profile-displayphoto-shrink_400_400/B56ZeERW69GoAo-/0/1750270833407?e=1772668800&v=beta&t=ktIpf_HH4DdHTkwIcvux0rLFSzAeI8hEd8rBbG-YOOQ" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Victor Rande</h3>
+        <p>
+          We are a team of economists and app developers passionate about turning data into smart, practical solutions. Together we design and build technology that helps people make better, more sustainable decisions.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/victor-rande-7708ab358/" target="_blank">Linkedin</a>
+        </div> 
+      </div>           
+
+      <div class="box2"></div>     
+    </div>
+
+  </div>          
+</section>
+        
+{% endblock content %}

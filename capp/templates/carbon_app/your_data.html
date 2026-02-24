@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_carbon_app">
+    <div class="container">
+
+        <div class="header_carbon_app">
+            
+            <div class="box"> 
+                <h1 style="font-size:55px;">
+                    <span class="text-logo">Your Data</span>
+                </h1>
+            </div>
+
+            <div class="box">
+                <img 
+                    src="{{url_for('static', filename='icons/calculator.svg')}}"
+                    width="325" 
+                    height="325"
+                    alt=""/>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

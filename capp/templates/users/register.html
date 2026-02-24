@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_carbon_app">
+    <div class="container">
+
+        <div class="header_carbon_app">
+            
+            <div class="box"> 
+                <h1 style="font-size:55px;">
+                    <span class="text-logo">Register Here</span>
+                </h1>
+                
+                <!-- REGISTER FORM -->
+                <div class="login-box" onsubmit="showMessage()">
+                    <form method="POST">
+                        <input class="login-input" type="text" name="first_name" placeholder="First name" required>
+                        <input class="login-input" type="email" name="email" placeholder="Email" required>
+                        <input class="login-input" type="password" name="password" placeholder="Password" required>
+                        <button class="login-btn" type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="box">
+                <img 
+                    src="{{url_for('static', filename='icons/register.svg')}}"
+                    width="325" 
+                    height="325"
+                    alt=""/>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<script>
+function showMessage() {
+    alert("🎉 Registration successful!");
+}
+</script>
+
+
+    
+
+{% endblock content %}
