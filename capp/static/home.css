@@ -116,7 +116,6 @@ p {
 }
 .developers .box2:nth-of-type(3) {
   flex-grow: 4;
-  background: #2a4359; 
 }
 
 .section_container_buttons_developers {
@@ -192,4 +191,5 @@ p {
   border: none;
   font-weight: 600;
   cursor: pointer;
+
 }
