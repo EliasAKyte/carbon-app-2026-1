@@ -1,15 +1,5 @@
-/* Colors */
-/* Rainy theme 5 -Green Digitalization Course and Students Apps-:
-Navbar (background): #8bbbd9
-Navbar (a hover): #466fa6
-Navbar (logo): #568c63
-Navbar (a menu): #2a4359
-*/
-
-/* Google fonts Roboto  */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
-/* CSS utilities */
 *{
   box-sizing: border-box;
   padding: 0;
@@ -44,7 +34,6 @@ img {
   width: 100%;
 }
 
-/* Navbar  */
 .section_carbon_app_navbar {
   background-color:#8bbbd9;
 }
@@ -78,7 +67,6 @@ img {
   color: #568c63;
 }
 
-/* Footer  */
 .section_footer{
   background-color:#8bbbd9;
 }
@@ -92,7 +80,6 @@ img {
   padding: 0 0px;
 }
 
-/* Media query */
 @media(max-width:768px){
   .carbon_app_navbar {
     height: 160px; 
@@ -111,3 +98,4 @@ img {
     border-bottom: #2a4359 2px solid;
   }
 }
+

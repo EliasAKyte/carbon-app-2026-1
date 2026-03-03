@@ -1,17 +1,8 @@
-/* Colors 
-Home, section 1 (head, background): #9fa7bf
-Home, section 1 (head, boxes): #568c63
-Home, section 2 (developers, background): #c5c8d9 
-Home, section 2 (developers, boxes): #49736f
-*/
-
-/* Utilities  */
 p {
   margin: 10px 0;
   font-size: 18px;
 }
 
-/* Section header_home */
 .section_header_home {
   background-color: #2a4359; 
 }
@@ -63,7 +54,6 @@ p {
   align-items: center;
 }
 
-/* Section developers */
 .section_developers {
   background-color: #2a4359; 
 }
@@ -158,6 +148,7 @@ p {
     align-items: center;
   }
 }
+
 
 
 
