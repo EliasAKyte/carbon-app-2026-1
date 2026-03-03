@@ -1,4 +1,3 @@
-/* ===== Register/Login (ren, pen, robust) ===== */
 .register_section_css{
   --bg: #2f4b5a;
   --card: #eef3f7;
@@ -12,7 +11,6 @@
   padding: 72px 0;
 }
 
-/* Wrapper: form venstre, logo høyre */
 .register_section_css .register-wrap{
   max-width: 1000px;
   margin: 0 auto;
@@ -25,7 +23,6 @@
   justify-content: center;
 }
 
-/* Kortet med form */
 .register_section_css .register-card{
   background: var(--card);
   border-radius: 16px;
@@ -33,7 +30,6 @@
   box-shadow: 0 18px 40px rgba(0,0,0,.25);
 }
 
-/* Legend/tittel */
 .register_section_css legend{
   margin: 0 0 18px 0 !important;
   padding: 0 !important;
@@ -46,7 +42,6 @@
   color: var(--primary);
 }
 
-/* labels av (du ville ha placeholder look) */
 .register_section_css .form-control-label{
   display: none;
 }
@@ -55,7 +50,6 @@
   margin-bottom: 12px;
 }
 
-/* Inputs */
 .register_section_css .form-control{
   width: 100%;
   box-sizing: border-box;
@@ -88,7 +82,6 @@
   box-shadow: 0 0 0 4px rgba(225,29,72,.12);
 }
 
-/* Knapp */
 .register_section_css .register-btn{
   width: 100%;
   height: 46px;
@@ -117,7 +110,6 @@
   transform: translateY(1px);
 }
 
-/* Footer */
 .register_section_css .register-footer small{
   color: #243041;
 }
@@ -132,7 +124,6 @@
   text-decoration: underline;
 }
 
-/* Logo på høyre side */
 .register_section_css .register-logo{
   display: grid;
   place-items: center;
@@ -160,7 +151,6 @@
   display: block;
 }
 
-/* Mobil: stable under hverandre */
 @media (max-width: 768px){
   .register_section_css .register-wrap{
     grid-template-columns: 1fr;
