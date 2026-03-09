@@ -11,13 +11,14 @@ ol {
   font-size: 18px;
 }
 
+/* Section header */
 .section_header_methodology {
-  background-color:#2a4359;
+  background-color:#a8bed7;
 }
 .header {
   display: flex;  
   align-items: start;
-  background: #2a4359;
+  background: #a8bed7;
 }
 .header .box {
   flex: 1;
@@ -59,6 +60,8 @@ ol {
   align-items:center;
 }
 
+/* Section methodology */
+
 .section_body_methodology {
   background-color:#2a4359;
   color: white;
@@ -71,6 +74,7 @@ ol {
   background: #2a4359;
 }
 
+/* Table with one column */
 .methodology .box_table1 {
   flex: 1;
   background: #8badd9;
@@ -91,6 +95,8 @@ ol {
   flex-grow:4;
 }
 
+
+/* Table with two columns */
 .methodology .box_table2 {
   flex: 1;
   background: #8badd9;
@@ -119,4 +125,5 @@ ol {
     flex-direction: column;
   } 
 }
+
 
