@@ -1,3 +1,5 @@
+
+
 p {
   margin: 10px 0;
   font-size: 18px;
@@ -10,8 +12,9 @@ h4 {
   font-weight: bold;
 }
 
+/* Section header */
 .section_header_carbon_app {
-  background-color: #2a4359;
+  background-color: #a8bed7;
   font-family: "Times New Roman", Times, serif;
    
 }
@@ -19,7 +22,7 @@ h4 {
 .header_carbon_app {
   display: flex;  
   align-items: start;
-  background: #2a4359;         
+  background: #a8bed7;         
 }
 
 .header_carbon_app .box {
@@ -53,9 +56,12 @@ h4 {
   color: #466fa6;
 }
 
+
+
 @media (max-width:768px) { 
   .header_carbon_app {
     flex-direction: column;
   } 
 }
+
 
