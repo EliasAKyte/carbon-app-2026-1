@@ -1,9 +1,6 @@
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
-
+/* CSS utilities */
 *{
   box-sizing: border-box;
   padding: 0;
@@ -11,7 +8,7 @@
 }
 body {
   font-family: 'Roboto', sans-serif;
-  background: #fff;
+  background-color: #EFE3C2;
   line-height: 1.6;
 }
 .container {
@@ -38,13 +35,16 @@ img {
   width: 100%;
 }
 
+/* Navbar  */
 
+  
 
 .carbon_app_navbar {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   height: 70px;
+  background-color:#a8bed7 ;
   align-items: center;
   padding: 0 0px;
 }
@@ -54,6 +54,9 @@ img {
   margin: 0 5px;
   font-size: 20px;
   text-decoration: none;
+}
+.section_carbon_app_navbar{
+  background-color:#a8bed7;
 }
 .carbon_app_navbar a:hover{
   border-bottom: #2a4359 4px solid;
@@ -69,9 +72,9 @@ img {
   color: #568c63;
 }
 
-
+/* Footer  */
 .section_footer{
-  background-color:#fafcfd;
+  background: color #a8bed7;;
 }
 .footer {
   display: flex;
@@ -79,11 +82,11 @@ img {
   justify-content: center;
   height: 70px;
   align-items: center;
-  background-color: #f8fafb;
+  background-color: #f9f9fa;
   padding: 0 0px;
 }
 
-
+/* Media query */
 @media(max-width:768px){
   .carbon_app_navbar {
     height: 160px; 
@@ -102,5 +105,6 @@ img {
     border-bottom: #2a4359 2px solid;
   }
 }
+
 
 
