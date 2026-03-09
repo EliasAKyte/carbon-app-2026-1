@@ -1,136 +1,117 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<!-- Header -->
-<section class="section_header_home">
+
+<section class="hero">
   <div class="container">
-
-    <div class="header_home">
-      <div class="box">
-        {% with messages = get_flashed_messages(with_categories=true)%}
-         {% if messages %}
-            {%for category, message in messages %}
-             <div class="alert alert-{{category}}">
-              {{ message }}
-             </div>
-            {% endfor %}
-         {% endif %}
-        {% endwith %}
-        <h1 style="font-size:55px; font-family: 'Times New Roman', Times, serif;">
-          <span class="text-logo">Home</span>
-        </h1>
-
-        <p style="text-align:left;">
-          Welcome to Carbon App. We are a team of students in economics and technology, working together to explore how digital tools can support more sustainable decisions. Through our project, we combine academic knowledge with practical development to better understand climate impact, data analysis, and responsible innovation. Our goal is to transform complex environmental information into simple, accessible insights that help individuals and organizations take meaningful action. By bridging theory and practice, we aim to demonstrate how technology can contribute to a greener and more informed future.
-        </p>
-
-        <div class="container_buttons_links_header_home">
-          <div class="btn">
-            <a href="{{url_for('users.register')}}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Register</a>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+            {{ message }}
           </div>
-          <div class="btn">
-            <a href="{{url_for('users.login')}}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Login</a>
-          </div>
-        </div>  
-      </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
 
-      <div class="box">
-        <img 
-          src="{{url_for('static', filename='icons/carbon_app.svg')}}"
-          width="325" 
-          height="325"
-          alt=""/>
+    <div class="hero-content">
+      
+      <h1>TRACK YOUR CARBON</h1>
+      <p>
+        Track your emissions. Reduce your footprint. Make sustainability easier,
+        clearer, and more actionable with Carbon App.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="{{ url_for('users.register') }}" class="btn btn-primary-custom">Explore Now</a>
+        <a href="#team" class="btn btn-secondary-custom">Meet Our Team</a>
       </div>
     </div>
-
   </div>
-</section> 
+</section>
 
-<!-- Developers -->
-<section class="section_developers">
+
+<section class="mission">
+  <div class="container small-container">
+    <h2>OUR MISSION</h2>
+    <p>
+      Our mission is to help users understand how their choices impact the environment.
+      With Carbon App, you get clear and accessible insights into your carbon footprint,
+      enabling smarter and more sustainable decisions every day.
+    </p>
+  </div>
+</section>
+
+
+
+<section class="team-section" id="team">
   <div class="container">
-
-    <div class="developers" style="display:block;">
-      <h1 style="text-align:center; color:#568c63;"> Our Team</h1>
-      <p style="color:#fff;">
-        We are a team of economists and app developers passionate about turning data into smart, practical solutions. Together we design and build technology that helps people make better, more sustainable decisions.
-      </p>      
+    <div class="section-header center">
+      <span class="tag">Our Team</span>
+      <h2>Meet Our Team</h2>
+      <p>The people behind Carbon App</p>
     </div>
 
-    <div class="developers">
-      <div class="box">
-        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGEs456ZlnQlg/profile-displayphoto-crop_800_800/B4EZvN1ywzIwAI-/0/1768684990661?e=1774483200&v=beta&t=ckAGzzD2Y4HA60qY9brIcRrL33x1NhMHRWGzjJiRNpQ" alt="" style="border-radius: 50%; width:200px;">
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGEs456ZlnQlg/profile-displayphoto-crop_800_800/B4EZvN1ywzIwAI-/0/1768684990661?e=1774483200&v=beta&t=ckAGzzD2Y4HA60qY9brIcRrL33x1NhMHRWGzjJiRNpQ" alt="Elias Kyte">
         <h3>Elias Kyte</h3>
         <p>
-          Elias Kyte was born in 2005 and is originally from Bergen, Norway. He is currently studying at the Norwegian School of Economics (NHH). Prior to beginning his studies, he completed his military service. With his background from both the armed forces and a leading business school, Elias represents a combination of discipline, dedication, and academic ambition.
+                    Elias Kyte was born in 2005 and is originally from Bergen, Norway. He is currently studying at the Norwegian School of Economics (NHH). Prior to beginning his studies, he completed his military service. With his background from both the armed forces and a leading business school, Elias represents a combination of discipline, dedication, and academic ambition.
         </p>
-        <div class="section_container_buttons_developers">
-          <a class="btn_developers" href="https://www.linkedin.com/in/elias-kyte-612b91268/" target="_blank">Linkedin</a>
-        </div> 
+        <a href="https://www.linkedin.com/in/elias-kyte-612b91268/" target="_blank" class="btn-team">LinkedIn</a>
       </div>
 
-      <div class="box">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEXE_lwqsLMAg/profile-displayphoto-crop_800_800/B4DZonDX6NKIAI-/0/1761591787814?e=1774483200&v=beta&t=Hy7ywgBS4soV9XKCvzGYyoywsb896Ql3cmTQd6nA57g" alt="" style="border-radius: 50%; width:200px;">
+      <div class="team-card">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEXE_lwqsLMAg/profile-displayphoto-crop_800_800/B4DZonDX6NKIAI-/0/1761591787814?e=1774483200&v=beta&t=Hy7ywgBS4soV9XKCvzGYyoywsb896Ql3cmTQd6nA57g" alt="Trond Heløe">
         <h3>Trond Heløe</h3>
         <p>
-          Trond Heløe was born in 2004 and is currently studying at the Norwegian School of Economics (NHH). Before starting his academic journey, he completed his military service, gaining valuable experience and discipline. Through his background in both the armed forces and business education, Trond demonstrates commitment, responsibility, and strong academic motivation.
+           Trond Heløe was born in 2004 and is currently studying at the Norwegian School of Economics (NHH). Before starting his academic journey, he completed his military service, gaining valuable experience and discipline. Through his background in both the armed forces and business education, Trond demonstrates commitment, responsibility, and strong academic motivation.
         </p>
-        <div class="section_container_buttons_developers">
-          <a class="btn_developers" href="https://www.linkedin.com/in/trond-heidenreich-hel%C3%B8e-604a61255/" target="_blank">Linkedin</a>
-        </div> 
-      </div>           
+        <a href="https://www.linkedin.com/in/trond-heidenreich-hel%C3%B8e-604a61255/" target="_blank" class="btn-team">LinkedIn</a>
+      </div>
 
-      <div class="box">
-        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="" style="border-radius: 50%; width:200px;">
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Filip Odgaard Dimcevski">
         <h3>Filip Odgaard Dimcevski</h3>
         <p>
           Filip was born in 2005 and is originally from Bergen, Norway. He is currently studying at the Norwegian School of Economics (NHH). As a student at one of Norway’s leading business schools, Filip is building a strong academic foundation while developing skills in economics and business.
         </p>
-        <div class="section_container_buttons_developers">
-          <a class="btn_developers" href="https://www.fotball.no/fotballdata/kamp/?fiksId=8817616" target="_blank">Linkedin</a>
-        </div> 
-      </div>     
-    </div>
-
-    <div class="developers">
-      <div class="box2">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEWl-EgnJRK5A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709993055065?e=1774483200&v=beta&t=PW6HCJtaomXFdWjm_5pH1LJzp1T2U_Q7ngGiHg6kXQw" alt="" style="border-radius: 50%; width:200px;">
-        <h3>Sarah Hess</h3>
-        <p>
-          Sarah Hess was born in Vienna, Austria, in 2004. She is currently studying international business administration at the Vienna University of Economics and Business (WU Vienna). She completed a three-month internship abroad in France, which helped her gain the intercultural skills needed for the international collaboration involved in developing this app
-        </p>
-        <div class="section_container_buttons_developers">
-          <a class="btn_developers" href="https://www.linkedin.com/in/sarah-he%C3%9F-613b37297/" target="_blank">Linkedin</a>
-        </div> 
+        <a href="https://www.fotball.no/fotballdata/kamp/?fiksId=8817616" target="_blank" class="btn-team">LinkedIn</a>
       </div>
 
-      <div class="box2">
-        <img src="https://media.licdn.com/dms/image/v2/D5603AQHK67KR8t5T_g/profile-displayphoto-shrink_800_800/B56ZeERW69GoAk-/0/1750270833407?e=1774483200&v=beta&t=5I53ZjuQ0gqtO5vaWLQkI1yRvoaVZio-kFUNshvjuQo" alt="" style="border-radius: 50%; width:200px;">
+      <div class="team-card">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEWl-EgnJRK5A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709993055065?e=1774483200&v=beta&t=PW6HCJtaomXFdWjm_5pH1LJzp1T2U_Q7ngGiHg6kXQw" alt="Sarah Hess">
+        <h3>Sarah Hess</h3>
+        <p>
+           Sarah Hess was born in Vienna, Austria, in 2004. She is currently studying international business administration at the Vienna University of Economics and Business (WU Vienna). She completed a three-month internship abroad in France, which helped her gain the intercultural skills needed for the international collaboration involved in developing this app
+        </p>
+        <a href="https://www.linkedin.com/in/sarah-he%C3%9F-613b37297/" target="_blank" class="btn-team">LinkedIn</a>
+      </div>
+
+      <div class="team-card">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQHK67KR8t5T_g/profile-displayphoto-shrink_800_800/B56ZeERW69GoAk-/0/1750270833407?e=1774483200&v=beta&t=5I53ZjuQ0gqtO5vaWLQkI1yRvoaVZio-kFUNshvjuQo" alt="Victor Rande">
         <h3>Victor Rande</h3>
         <p>
           Victor Rande was born in 2004 and is currently studying at the Norwegian School of Economics (NHH). Prior to beginning his academic journey, he completed his military service at Skjold, where he gained valuable experience and developed discipline and teamwork skills. Through his background in both the armed forces and business education, Victor demonstrates commitment, responsibility, and strong academic motivation.
         </p>
-        <div class="section_container_buttons_developers">
-          <a class="btn_developers" href="https://www.linkedin.com/in/victor-rande-7708ab358/" target="_blank">Linkedin</a>
-        </div> 
-      </div>           
+        <a href="https://www.linkedin.com/in/victor-rande-7708ab358/" target="_blank" class="btn-team">LinkedIn</a>
+      </div>
 
-      
-      <div class="box2">  
-       <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.15752-9/642739164_1909097873063468_489034028673989011_n.jpg?stp=dst-jpg_s565x565_tt6&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OmOvOd1k9_cQ7kNvwFAkMYe&_nc_oc=AdmPASgUwOe1NxofiC7cCAG1YTLiMMRhOdjhESwYz6QNL7W9QgbE5zkMDgmhK72-CK8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_ss=8&oh=03_Q7cD4wHxRmCujIyHbEZo0IPWjr-cznjrpwu2hZgcE-Q8HPSw_w&oe=69CF8D38" alt="Loic" style="border-radius: 50%; width:200px;">
-       <h3>Loic Maleck</h3>
-       <p>
+      <div class="team-card">
+        <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.15752-9/642739164_1909097873063468_489034028673989011_n.jpg?stp=dst-jpg_s565x565_tt6&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OmOvOd1k9_cQ7kNvwFAkMYe&_nc_oc=AdmPASgUwOe1NxofiC7cCAG1YTLiMMRhOdjhESwYz6QNL7W9QgbE5zkMDgmhK72-CK8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_ss=8&oh=03_Q7cD4wHxRmCujIyHbEZo0IPWjr-cznjrpwu2hZgcE-Q8HPSw_w&oe=69CF8D38" alt="Loic Maleck">
+        <h3>Loic Maleck</h3>
+        <p>
           Loic Maleck was born in Germany in 2005. He is currently studying international business administration at the Vienna University of Economics and Business (WU Vienna). He has worked in Canada for a leading renewable energy investment fund, where he gained valuable experience that demonstrates his commitment to this project.
-       </p>
-       <div class="section_container_buttons_developers">
-       <a class="btn_developers" href="https://www.linkedin.com/in/lo%C3%AFc-maleck-404a52296/" target="_blank">Linkedin</a>
-       </div>   
+        </p>
+        <a href="https://www.linkedin.com/in/lo%C3%AFc-maleck-404a52296/" target="_blank" class="btn-team">LinkedIn</a>
+      </div>
     </div>
-
-  </div>          
+  </div>
 </section>
-        
+
 {% endblock content %}
+
 
 
 
