@@ -1,20 +1,24 @@
 from capp import application
+from flask_sqlalchemy import SQLAlchemy
 
-from flask import render_template
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
+application.config['SQLALCHEMY_BINDS']={'transport': 'sqlite:///transport.db'}
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(application)
+
+class User(db.Model):
+    __tablename__ = "user_table"
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30), unique=True, nullable=False)
+    transport = db.relationship('Transport', backref='author', lazy=True)
+
+class Transport(db.Model):
+    __bind_key__='transport'
+    __tablename__='transport_table'
+    id = db.Column(db.Integer, primary_key=True)
+    kms = db.Column(db.Float)
+    user_id = db.Column(db.Integer, db.ForeignKey('user_table.id'), nullable=False)
 
 
-@application.route('/')
-@application.route('/home')
-def home():
-  return render_template('home.html')
-
-@application.route('/methodology')
-def methodology():
-  return render_template('methodology.html', title='methodology')
-
-@application.route('/carbon_app')
-def carbon_app():
-    return render_template('carbon_app.html', title='carbon_app')
-
-if __name__=='__main__':
-  application.run(debug=True)
+if __name__ == '__main__':
+    application.run(debug=True)
