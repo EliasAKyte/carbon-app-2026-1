@@ -1,40 +1,43 @@
 {% extends "layout.html" %}
 {% block content %}
 
-
-<!-- Queries -->
 <section class="section_developers">
   <div class="container">
-
     <div class="developers" style="display:block;">
       <h5>Query 1: Kilometers by user</h5>
-        {{user_name}}:
-        {%for transport in user_transports %}   
-          {{transport.kms}}
+      <p>{{ user_name }}:</p>
+      {% if user_transports %}
+        {% for transport in user_transports %}
+          <p>{{ transport.kms }}</p>
         {% endfor %}
-        {{len_list}}
-        {{user1}}
-      <h5>Query 2: Round kilometers by user</h5>
-        {{user_name}}:
-        {{kms}} 
-      <h5>Query 3: Maximum kilometers by user</h5>
-        {{user_name}}:
-        {{max_kms}}
-      <h5>Query 4: Co2 per kilometer by user </h5>
-        {{user_name}}:
-        {{kms}} 
-        {{co2}} 
-        {{co2_kms}}
-      <h5>Query 5: Maximum Co2 per kilometer by user </h5>
-        {{user_name}}:
-        {{max_co2_kms}}
-      <h5>Query 6: Type of transport with maximum Co2 per kilometer by user  </h5>  
-        {{user_name}}:
-        {{type}}
-        {{transport_max_co2_kms}}
-    </div>
+      {% else %}
+        <p>No transport data found.</p>
+      {% endif %}
 
-  </div>          
+      <h5>Query 2: Round kilometers by user</h5>
+      <p>{{ user_name }}:</p>
+      <p>{{ kms if kms is not none else "No data" }}</p>
+
+      <h5>Query 3: Maximum kilometers by user</h5>
+      <p>{{ user_name }}:</p>
+      <p>{{ max_kms if max_kms is not none else "No data" }}</p>
+
+      <h5>Query 4: Co2 per kilometer by user</h5>
+      <p>{{ user_name }}:</p>
+      <p>Kilometers: {{ kms if kms is not none else "No data" }}</p>
+      <p>Co2: {{ co2 if co2 is not none else "No data" }}</p>
+      <p>Co2 per km: {{ co2_kms if co2_kms is not none else "No data" }}</p>
+
+      <h5>Query 5: Maximum Co2 per kilometer by user</h5>
+      <p>{{ user_name }}:</p>
+      <p>{{ max_co2_kms if max_co2_kms is not none else "No data" }}</p>
+
+      <h5>Query 6: Type of transport with maximum Co2 per kilometer by user</h5>
+      <p>{{ user_name }}:</p>
+      <p>Transport type: {{ transport_type if transport_type else "No data" }}</p>
+      <p>Max Co2 per km: {{ transport_max_co2_kms if transport_max_co2_kms is not none else "No data" }}</p>
+    </div>
+  </div>
 </section>
 
 <section class="hero">
