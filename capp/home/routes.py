@@ -1,15 +1,80 @@
 from flask import render_template, Blueprint
 from capp.models import User, Transport
 
-home=Blueprint('home',__name__)
+home = Blueprint("home", __name__)
 
-@home.route('/')
-@home.route('/home')
+@home.route("/")
+@home.route("/home")
 def home_home():
-  user1 = User.query.first().username
-  transport1 = Transport.query.first().kms
-  user3 = User.query.filter_by(username='Bjørk').first().username
-  user4 = User.query.filter_by(username='Bjørk').first()
-  transports = Transport.query.filter_by(user_id=user4.id)
-  users = User.query.all()
-  return render_template('home.html', user1=user1, transport=transport1, user3=user3, transports=transports, users=users)
+    # Velg brukeren du vil vise data for
+    user = User.query.filter_by(username="Bjørk").first()
+
+    if not user:
+        return render_template(
+            "home.html",
+            user_name="Bjørk",
+            user_transports=[],
+            kms=None,
+            max_kms=None,
+            co2=None,
+            co2_kms=None,
+            max_co2_kms=None,
+            transport_type=None,
+            transport_max_co2_kms=None,
+        )
+
+    user_transports = Transport.query.filter_by(user_id=user.id).all()
+
+    first_transport = user_transports[0] if user_transports else None
+
+    # Query 2
+    kms = round(first_transport.kms, 2) if first_transport and first_transport.kms is not None else None
+
+    # Query 3
+    max_kms = max((t.kms for t in user_transports if t.kms is not None), default=None)
+
+    # Query 4
+    co2 = round(first_transport.co2, 2) if first_transport and first_transport.co2 is not None else None
+    co2_kms = (
+        round(first_transport.co2 / first_transport.kms, 2)
+        if first_transport
+        and first_transport.co2 is not None
+        and first_transport.kms not in (None, 0)
+        else None
+    )
+
+    # Query 5 og 6
+    valid_transports = [
+        t for t in user_transports
+        if t.co2 is not None and t.kms not in (None, 0)
+    ]
+
+    transport_with_max_co2_kms = (
+        max(valid_transports, key=lambda t: t.co2 / t.kms)
+        if valid_transports else None
+    )
+
+    max_co2_kms = (
+        round(transport_with_max_co2_kms.co2 / transport_with_max_co2_kms.kms, 2)
+        if transport_with_max_co2_kms else None
+    )
+
+    transport_type = (
+        transport_with_max_co2_kms.transport
+        if transport_with_max_co2_kms else None
+    )
+
+    transport_max_co2_kms = max_co2_kms
+
+    return render_template(
+        "home.html",
+        user_name=user.username,
+        user_transports=user_transports,
+        kms=kms,
+        max_kms=max_kms,
+        co2=co2,
+        co2_kms=co2_kms,
+        max_co2_kms=max_co2_kms,
+        transport_type=transport_type,
+        transport_max_co2_kms=transport_max_co2_kms,
+    )
