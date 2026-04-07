@@ -8,14 +8,15 @@ application = Flask(__name__)
 
 application.config['SECRET_KEY'] = os.environ['SECRET_KEY']  
 DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}@{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
+DBVAR = 'postgresql://postgres:Elias2508@awseb-e-c4u3cmzhpu-stack-awsebrdsdatabase-izxex7zvyex6.cv2qy82mqgnx.eu-north-1.rds.amazonaws.com:5432/ebdb'
+
 application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR
 application.config['SQLALCHEMY_BINDS'] = {'transport': DBVAR}
 
-application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
-application.config['SQLALCHEMY_BINDS']={'transport': 'sqlite:///transport.db'}
+# application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
+# application.config['SQLALCHEMY_BINDS']={'transport': 'sqlite:///transport.db'}
 
 db = SQLAlchemy(application)
-
 bcrypt = Bcrypt(application)
 login_manager=LoginManager(application)
 login_manager.login_view="users.login"
