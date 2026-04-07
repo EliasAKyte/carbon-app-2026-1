@@ -11,8 +11,8 @@ DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}
 application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR
 application.config['SQLALCHEMY_BINDS'] = {'transport': DBVAR}
 
-application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
-application.config['SQLALCHEMY_BINDS']={'transport': 'sqlite:///transport.db'}
+#application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
+#application.config['SQLALCHEMY_BINDS']={'transport': 'sqlite:///transport.db'}
 
 db = SQLAlchemy(application)
 
