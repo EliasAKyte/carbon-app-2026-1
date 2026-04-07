@@ -32,6 +32,8 @@ application.register_blueprint(methodology)
 application.register_blueprint(carbon_app)
 application.register_blueprint(users)
 
+with application.app_context():
+    db.create_all()
 
 
 
