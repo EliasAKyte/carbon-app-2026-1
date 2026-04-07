@@ -18,7 +18,6 @@ class User(db.Model, UserMixin):
 
 # Database Transport
 class Transport(db.Model):
-    __bind_key__ = 'transport'
     __tablename__= 'transport_table'
     id = db.Column(db.Integer, primary_key=True)
     kms = db.Column(db.Float)
