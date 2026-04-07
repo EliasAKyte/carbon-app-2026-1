@@ -11,7 +11,7 @@ DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}
 DBVAR = 'postgresql://postgres:Elias2508@awseb-e-c4u3cmzhpu-stack-awsebrdsdatabase-izxex7zvyex6.cv2qy82mqgnx.eu-north-1.rds.amazonaws.com:5432/ebdb'
 
 application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR
-application.config['SQLALCHEMY_BINDS'] = {'transport': DBVAR}
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
 # application.config['SQLALCHEMY_BINDS']={'transport': 'sqlite:///transport.db'}
