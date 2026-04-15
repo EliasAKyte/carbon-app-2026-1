@@ -1,152 +1,137 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<section class="section_developers">
-  <div class="container">
-    <div class="developers" style="display:block;">
-      <h5>Query 1: Kilometers by user</h5>
-      <p>{{ user_name }}:</p>
-      {% if user_transports %}
-        {% for transport in user_transports %}
-          <p>{{ transport.kms }}</p>
-        {% endfor %}
-      {% else %}
-        <p>No transport data found.</p>
-      {% endif %}
-
-      <h5>Query 2: Round kilometers by user</h5>
-      <p>{{ user_name }}:</p>
-      <p>{{ kms if kms is not none else "No data" }}</p>
-
-      <h5>Query 3: Maximum kilometers by user</h5>
-      <p>{{ user_name }}:</p>
-      <p>{{ max_kms if max_kms is not none else "No data" }}</p>
-
-      <h5>Query 4: Co2 per kilometer by user</h5>
-      <p>{{ user_name }}:</p>
-      <p>Kilometers: {{ kms if kms is not none else "No data" }}</p>
-      <p>Co2: {{ co2 if co2 is not none else "No data" }}</p>
-      <p>Co2 per km: {{ co2_kms if co2_kms is not none else "No data" }}</p>
-
-      <h5>Query 5: Maximum Co2 per kilometer by user</h5>
-      <p>{{ user_name }}:</p>
-      <p>{{ max_co2_kms if max_co2_kms is not none else "No data" }}</p>
-
-      <h5>Query 6: Type of transport with maximum Co2 per kilometer by user</h5>
-      <p>{{ user_name }}:</p>
-      <p>Transport type: {{ transport_type if transport_type else "No data" }}</p>
-      <p>Max Co2 per km: {{ transport_max_co2_kms if transport_max_co2_kms is not none else "No data" }}</p>
-    </div>
-  </div>
-</section>
-
-<section class="hero">
-  <div class="container">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for category, message in messages %}
-          <div class="alert alert-{{ category }}">
-            {{ message }}
-          </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
-
-    <div class="hero-content">
-      
-      <h1>TRACK YOUR CARBON</h1>
-      <p>
-        Track your emissions. Reduce your footprint. Make sustainability easier,
-        clearer, and more actionable with Carbon App.
+<section class="hero-section">
+  <div class="hero-layer">
+    <div class="hero-inner">
+    
+      <h1>Track your footprint<br>Change your habits</h1>
+      <p class="hero-description">
       </p>
 
-      <div class="hero-buttons">
-        <a href="{{ url_for('users.register') }}" class="btn btn-primary-custom">Explore Now</a>
-        <a href="#team" class="btn btn-secondary-custom">Meet Our Team</a>
+      <div class="hero-actions">
+        <a href="{{ url_for('users.register') }}" class="btn-main">Explore now</a>
+        <a href="#about-us" class="btn-ghost">Meet the team</a>
       </div>
     </div>
   </div>
 </section>
 
-
-<section class="mission">
-  <div class="container small-container">
-    <h2>OUR MISSION</h2>
-    <p>
-      Our mission is to help users understand how their choices impact the environment.
-      With Carbon App, you get clear and accessible insights into your carbon footprint,
-      enabling smarter and more sustainable decisions every day.
-    </p>
-  </div>
-</section>
-
-
-
-<section class="team-section" id="team">
-  <div class="container">
-    <div class="section-header center">
-      <span class="tag">Our Team</span>
-      <h2>Meet Our Team</h2>
-      <p>The people behind Carbon App</p>
+<section class="intro-panel-section">
+  <div class="intro-panel">
+    <div class="intro-panel-left">
+      <p class="section-tag">Our mission</p>
+      <h2>Make sustainability easier to understand</h2>
     </div>
 
-    <div class="team-grid">
-      <div class="team-card">
-        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGEs456ZlnQlg/profile-displayphoto-crop_800_800/B4EZvN1ywzIwAI-/0/1768684990661?e=1774483200&v=beta&t=ckAGzzD2Y4HA60qY9brIcRrL33x1NhMHRWGzjJiRNpQ" alt="Elias Kyte">
-        <h3>Elias Kyte</h3>
-        <p>
-                    Elias Kyte was born in 2005 and is originally from Bergen, Norway. He is currently studying at the Norwegian School of Economics (NHH). Prior to beginning his studies, he completed his military service. With his background from both the armed forces and a leading business school, Elias represents a combination of discipline, dedication, and academic ambition.
-        </p>
-        <a href="https://www.linkedin.com/in/elias-kyte-612b91268/" target="_blank" class="btn-team">LinkedIn</a>
-      </div>
-
-      <div class="team-card">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEXE_lwqsLMAg/profile-displayphoto-crop_800_800/B4DZonDX6NKIAI-/0/1761591787814?e=1774483200&v=beta&t=Hy7ywgBS4soV9XKCvzGYyoywsb896Ql3cmTQd6nA57g" alt="Trond Heløe">
-        <h3>Trond Heløe</h3>
-        <p>
-           Trond Heløe was born in 2004 and is currently studying at the Norwegian School of Economics (NHH). Before starting his academic journey, he completed his military service, gaining valuable experience and discipline. Through his background in both the armed forces and business education, Trond demonstrates commitment, responsibility, and strong academic motivation.
-        </p>
-        <a href="https://www.linkedin.com/in/trond-heidenreich-hel%C3%B8e-604a61255/" target="_blank" class="btn-team">LinkedIn</a>
-      </div>
-
-      <div class="team-card">
-        <img src="https://media.licdn.com/dms/image/v2/D4E03AQE8-l9YRMo1EA/profile-displayphoto-crop_800_800/B4EZzYlwEvIsAI-/0/1773160304845?e=1775088000&v=beta&t=rOBCw_MVJKBPT-NKtsBq8PWhIADgjh4_w9moN2K8ukU" alt="Filip Odgaard Dimcevski">
-        <h3>Filip Odgaard Dimcevski</h3>
-        <p>
-          Filip was born in 2005 and is originally from Bergen, Norway. He is currently studying at the Norwegian School of Economics (NHH). As a student at one of Norway’s leading business schools, Filip is building a strong academic foundation while developing skills in economics and business.
-        </p>
-        <a href="https://www.linkedin.com/in/filip-dimcevski-3a3887382/" target="_blank" class="btn-team">LinkedIn</a>
-      </div>
-
-      <div class="team-card">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEWl-EgnJRK5A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709993055065?e=1774483200&v=beta&t=PW6HCJtaomXFdWjm_5pH1LJzp1T2U_Q7ngGiHg6kXQw" alt="Sarah Hess">
-        <h3>Sarah Hess</h3>
-        <p>
-           Sarah Hess was born in Vienna, Austria, in 2004. She is currently studying international business administration at the Vienna University of Economics and Business (WU Vienna). She completed a three-month internship abroad in France, which helped her gain the intercultural skills needed for the international collaboration involved in developing this app
-        </p>
-        <a href="https://www.linkedin.com/in/sarah-he%C3%9F-613b37297/" target="_blank" class="btn-team">LinkedIn</a>
-      </div>
-
-      <div class="team-card">
-        <img src="https://media.licdn.com/dms/image/v2/D5603AQHK67KR8t5T_g/profile-displayphoto-shrink_800_800/B56ZeERW69GoAk-/0/1750270833407?e=1774483200&v=beta&t=5I53ZjuQ0gqtO5vaWLQkI1yRvoaVZio-kFUNshvjuQo" alt="Victor Rande">
-        <h3>Victor Rande</h3>
-        <p>
-          Victor Rande was born in 2004 and is currently studying at the Norwegian School of Economics (NHH). Prior to beginning his academic journey, he completed his military service at Skjold, where he gained valuable experience and developed discipline and teamwork skills. Through his background in both the armed forces and business education, Victor demonstrates commitment, responsibility, and strong academic motivation.
-        </p>
-        <a href="https://www.linkedin.com/in/victor-rande-7708ab358/" target="_blank" class="btn-team">LinkedIn</a>
-      </div>
-
-      <div class="team-card">
-        <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.15752-9/642739164_1909097873063468_489034028673989011_n.jpg?stp=dst-jpg_s565x565_tt6&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OmOvOd1k9_cQ7kNvwFAkMYe&_nc_oc=AdmPASgUwOe1NxofiC7cCAG1YTLiMMRhOdjhESwYz6QNL7W9QgbE5zkMDgmhK72-CK8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_ss=8&oh=03_Q7cD4wHxRmCujIyHbEZo0IPWjr-cznjrpwu2hZgcE-Q8HPSw_w&oe=69CF8D38" alt="Loic Maleck">
-        <h3>Loic Maleck</h3>
-        <p>
-          Loic Maleck was born in Germany in 2005. He is currently studying international business administration at the Vienna University of Economics and Business (WU Vienna). He has worked in Canada for a leading renewable energy investment fund, where he gained valuable experience that demonstrates his commitment to this project.
-        </p>
-        <a href="https://www.linkedin.com/in/lo%C3%AFc-maleck-404a52296/" target="_blank" class="btn-team">LinkedIn</a>
-      </div>
+    <div class="intro-panel-right">
+      <p>
+        CarbonTrack helps users see how daily travel choices shape their carbon
+        footprint. The goal is to make sustainability feel clearer, more visual
+        and easier to improve.
+      </p>
     </div>
   </div>
 </section>
+
+<section class="about-section" id="about-us">
+  <div class="about-header">
+    <h2>The team behind CarbonTrack</h2>
+  </div>
+
+<div class="team-grid">
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://media.licdn.com/dms/image/v2/D4E03AQGEs456ZlnQlg/profile-displayphoto-crop_800_800/B4EZvN1ywzIwAI-/0/1768684990661?e=1778112000&v=beta&t=XQRv_jCrabEbL0az4RGc0BMaF05XlLicVEF4Tjuhb1I" alt="Elias Kyte">
+      <h3>Elias Kyte</h3>
+
+      <div class="profile-info">
+        <span>20 years old • Bergen</span>
+        <span>Student at NHH</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/elias-kyte-612b91268/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://media.licdn.com/dms/image/v2/D4D03AQEXE_lwqsLMAg/profile-displayphoto-crop_800_800/B4DZonDX6NKIAI-/0/1761591787814?e=1778112000&v=beta&t=UFn_MkPTMQmM7I5EFUDIDl5y4l-rLywso3wQCzaGWMk" alt="Trond Heløe">
+      <h3>Trond Heløe</h3>
+
+      <div class="profile-info">
+        <span>21 years old • Oslo</span>
+        <span>Student at NHH</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/trond-heidenreich-hel%C3%B8e-604a61255/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://media.licdn.com/dms/image/v2/D4E03AQE8-l9YRMo1EA/profile-displayphoto-crop_800_800/B4EZzYlwEvIsAI-/0/1773160304845?e=1778112000&v=beta&t=Ll91c8nK7HNBTqJNlC6F1UmYVr5qaze6R9_9c3qs5L0" alt="Filip Odgaard Dimcevski">
+      <h3>Filip Odgaard Dimcevski</h3>
+
+      <div class="profile-info">
+        <span>20 years old • Bergen</span>
+        <span>Student at NHH</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/filip-dimcevski-3a3887382/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://media.licdn.com/dms/image/v2/D4D03AQEWl-EgnJRK5A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709993055065?e=1778112000&v=beta&t=LXKfQMS3DXCNQGvwcg779A7W256KY_kHpAv2kN_ExHU" alt="Sarah Hess">
+      <h3>Sarah Hess</h3>
+
+      <div class="profile-info">
+        <span>21 years old • Vienna</span>
+        <span>Student at WU Vienna</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/sarah-he%C3%9F-613b37297/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://media.licdn.com/dms/image/v2/D5603AQHK67KR8t5T_g/profile-displayphoto-shrink_800_800/B56ZeERW69GoAk-/0/1750270833407?e=1778112000&v=beta&t=07KF11ItVQ2w_pphJeMeOrhMGs2n3zvJAPSZ4QepZKg" alt="Victor Rande">
+      <h3>Victor Rande</h3>
+
+      <div class="profile-info">
+        <span>21 years old • Oslo</span>
+        <span>Student at NHH</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/victor-rande-7708ab358/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.15752-9/642739164_1909097873063468_489034028673989011_n.jpg?stp=dst-jpg_s565x565_tt6&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OmOvOd1k9_cQ7kNvwFAkMYe&_nc_oc=AdmPASgUwOe1NxofiC7cCAG1YTLiMMRhOdjhESwYz6QNL7W9QgbE5zkMDgmhK72-CK8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_ss=8&oh=03_Q7cD4wHxRmCujIyHbEZo0IPWjr-cznjrpwu2hZgcE-Q8HPSw_w&oe=69CF8D38" alt="Loic Maleck">
+      <h3>Loic Maleck</h3>
+
+      <div class="profile-info">
+        <span>20 years old • Germany</span>
+        <span>Student at WU Vienna</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/lo%C3%AFc-maleck-404a52296/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+</div>
 
 {% endblock content %}
 
