@@ -38,8 +38,9 @@ efco2={'Bus':{'Diesel':0.10231,'CNG':0.08,'Petrol':0.10231,'No Fossil Fuel':0},
   'Motorbike':{'Petrol':0.09816,'No Fossil Fuel':0},
   'Scooter':{'No Fossil Fuel':0},
   'Bicycle':{'No Fossil Fuel':0},
-  'Walk':{'No Fossil Fuel':0}}
-print(efco2)
+  'Walk':{'No Fossil Fuel':0},
+  'Train':{'Diesel':0.035,'Electric':0}
+}
 
 #3.a. dictionary.get() method
 print(efco2.get('Bus'))
@@ -64,6 +65,5 @@ for k, v in efco2.items():
 for k1, v1 in efco2.items():
   for k2, v2 in efco2[k1].items():
     print(k1, v1) 
-    print(k2, v2)  
-
+    print(k2, v2) 
 
