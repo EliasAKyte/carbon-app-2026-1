@@ -8,11 +8,15 @@
       <h1>Track your footprint<br>Change your habits</h1>
       <p class="hero-description">
       </p>
-
-      <div class="hero-actions">
-        <a href="{{ url_for('users.register') }}" class="btn-main">Explore now</a>
-        <a href="#about-us" class="btn-ghost">Meet the team</a>
+          <div class="hero-actions">
+          {% if current_user.is_authenticated %}
+              <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="btn-main">Explore now</a>
+          {% else %}
+              <a href="{{ url_for('users.register') }}" class="btn-main">Explore now</a>
+          {% endif %}
+              <a href="#about-us" class="btn-ghost">Meet the team</a>
       </div>
+      
     </div>
   </div>
 </section>
