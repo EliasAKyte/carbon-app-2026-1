@@ -24,7 +24,6 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='layout.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='methodology.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='carbon_app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='users.css') }}">
 
@@ -53,7 +52,6 @@
           <nav class="site-nav">
             <ul>
               <li><a href="{{ url_for('home.home_home') }}">Home</a></li>
-              <li><a href="{{ url_for('methodology.methodology_home') }}">Methodology</a></li>
               <li><a href="{{ url_for('carbon_app.carbon_app_home') }}">Carbon App</a></li>
               <li><a href="{{ url_for('users.logout') }}">Logout</a></li>
             </ul>
