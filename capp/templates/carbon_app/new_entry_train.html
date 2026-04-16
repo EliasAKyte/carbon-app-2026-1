@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<section class="new_entry">
+  <div class="container">
+    <div class="box"></div>
+
+    <div class="box">
+      <h3>Train</h3>
+
+      <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>{{ form.kms.label }}</p>
+        {{ form.kms }}
+
+        <p>{{ form.fuel_type.label }}</p>
+        {{ form.fuel_type }}
+
+        <br><br>
+        {{ form.submit }}
+      </form>
+    </div>
+
+    <div class="box">
+      <h3>Our Methodology</h3>
+
+      <p>
+        Trains are an efficient way to travel longer distances on land. They can transport many passengers at once and often have lower emissions per kilometer than many other transport options.
+      </p>
+
+      <p><strong>Using the formula:</strong></p>
+      <p>CO₂ = d · ef</p>
+
+      <p><strong>Emission factors:</strong></p>
+      <p>Diesel: 0.035 kg/km</p>
+      <p>Electric: 0 kg/km</p>
+    </div>
+
+    <div class="box"></div>
+  </div>
+</section>
+
+{% endblock content %}
