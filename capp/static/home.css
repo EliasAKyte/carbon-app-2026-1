@@ -70,6 +70,7 @@ a {
   letter-spacing: -2px;
   margin-bottom: 26px;
   color: #f8f7f2;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .hero-description {
@@ -204,7 +205,7 @@ a {
 
 .profile-top {
   height: 95px;
-  background: linear-gradient(135deg, #17443f 0%, #2c6a61 100%);
+  background: linear-gradient(135deg, #5fb43a 0%, #2d6037 100%);
 }
 
 .profile-content {
@@ -254,16 +255,18 @@ a {
   margin-top: 22px;
   padding: 12px 22px;
   border-radius: 10px;
-  background-color: #17443f;
+  background: linear-gradient(135deg, #469355 0%, #5fb43b 100%);
   color: #ffffff;
   font-weight: bold;
   transition: 0.2s ease;
 }
 
 .profile-btn:hover {
-  background-color: #10312d;
-  color: #ffffff;
+  background: linear-gradient(135deg, #275732 0%, #3d8426 100%);
+  color: white;
+
 }
+
 
 @media (max-width: 1100px) {
   .hero-inner h1 {
