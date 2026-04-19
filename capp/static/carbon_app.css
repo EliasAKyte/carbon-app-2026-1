@@ -12,7 +12,7 @@
 
 .carbon-app-page .carbon-app-hero {
   padding: 70px 0 50px 0;
-  background: linear-gradient(135deg, #173f3a 0%, #1d3a53 100%);
+  background: linear-gradient(135deg, #295632 0%, #4b8f2e 100%);
 }
 
 .carbon-app-page .carbon-app-hero-grid {
@@ -23,7 +23,7 @@
 }
 
 .carbon-app-page .carbon-app-hero-text {
-  background: rgba(255, 255, 255, 0.06);
+  background: #16f41d0f;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
   padding: 40px 42px;
@@ -36,7 +36,7 @@
   font-weight: 700;
   letter-spacing: 1.6px;
   text-transform: uppercase;
-  color: #b8d4cb;
+  color: #5fb43a;
   text-align: left;
 }
 
@@ -73,13 +73,13 @@
 }
 
 .carbon-app-page .carbon-app-btn-primary {
-  background-color: #f4efe7;
-  color: #173330;
+  background-color: #e7f4ee;
+  color: #469355;
 }
 
 .carbon-app-page .carbon-app-btn-primary:hover {
   background-color: #ffffff;
-  color: #173330;
+  color: #469355;
   text-decoration: none;
 }
 
@@ -90,7 +90,7 @@
 }
 
 .carbon-app-page .carbon-app-btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: #1f4125;
   color: #ffffff;
   text-decoration: none;
 }
@@ -167,7 +167,7 @@
   height: 74px;
   margin: 0 auto 18px auto;
   border-radius: 50%;
-  background: linear-gradient(135deg, #173f3a 0%, #2f6b60 100%);
+  background: linear-gradient(135deg, #469355 0%, #5fb43b 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,13 +178,13 @@
 .carbon-app-page .carbon-app-transport-card h3 {
   font-size: 28px;
   margin-bottom: 12px;
-  color: #173330;
+  color: #469355;
 }
 
 .carbon-app-page .carbon-app-transport-card p {
   font-size: 16px;
   line-height: 1.7;
-  color: #4e5d58;
+  color: #469355;
   text-align: center;
   margin-bottom: 22px;
 }
@@ -193,8 +193,8 @@
   display: inline-block;
   padding: 12px 20px;
   border-radius: 10px;
-  background-color: #173f3a;
-  color: #ffffff;
+  color:#ffffff;
+  background-color:#5fb43b;;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
@@ -202,8 +202,8 @@
 }
 
 .carbon-app-page .carbon-app-card-btn:hover {
-  background-color: #102f2b;
-  color: #ffffff;
+  background:#2d6037;
+  color:white;
   text-decoration: none;
 }
 
@@ -326,7 +326,7 @@
 
 /* blue info/result card */
 .new_entry .container .box:nth-of-type(3) {
-  background: linear-gradient(135deg, #173f3a 0%, #1d3a53 100%);
+  background: linear-gradient(135deg, #5fb43a 0%, #2d6037 100%);
   border-radius: 26px;
   padding: 34px 32px;
   box-shadow: 0 16px 34px rgba(24, 40, 38, 0.10);
@@ -353,7 +353,7 @@
 .main_menu .container .box:nth-of-type(2) h1,
 .main_menu .container .box:nth-of-type(2) h2,
 .main_menu .container .box:nth-of-type(2) h3 {
-  color: #173330;
+  color: #469355;
   text-align: center;
   margin-bottom: 18px;
   font-size: 32px;
@@ -464,7 +464,7 @@
   padding: 12px 20px;
   border-radius: 10px;
   border: none;
-  background-color: #173f3a;
+  background-color: #5fb43a;
   color: #ffffff;
   font-size: 15px;
   font-weight: 600;
@@ -482,7 +482,7 @@
 .main_menu .btn:hover,
 .main_menu button:hover,
 .main_menu input[type="submit"]:hover {
-  background-color: #102f2b;
+  background-color: #2d6037;
   color: #ffffff;
   text-decoration: none;
 }
@@ -506,14 +506,14 @@
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  background-color: #173f3a;
+  background-color: #469355;
   border: none;
   transition: 0.2s ease;
 }
 
 .btn_carbon_app_new_entry_main:hover {
   color: #fff;
-  background-color: #102f2b;
+  background-color: #469355;
   text-decoration: none;
 }
 
@@ -532,12 +532,12 @@
   border-bottom: 1px solid rgba(23, 51, 48, 0.08);
   text-align: left;
   font-size: 15px;
-  color: #30433e;
+  color: #469355;
 }
 
 .table_main th {
   background: #e9e1d4;
-  color: #173330;
+  color: #469355;
   font-weight: 700;
 }
 
@@ -639,7 +639,7 @@
 }
 
 .your_data_header {
-  background: linear-gradient(135deg, #173f3a 0%, #1d3a53 100%);
+  background: linear-gradient(135deg, #295632 0%, #4b8f2e 100%);
   border-radius: 26px;
   padding: 34px 36px;
   margin-bottom: 26px;
@@ -669,7 +669,7 @@
   padding: 13px 22px;
   border-radius: 12px;
   background-color: #f6f1e9;
-  color: #173330;
+  color: #469355;
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
@@ -678,7 +678,7 @@
 
 .your_data_btn:hover {
   background-color: #ffffff;
-  color: #173330;
+  color: #469355;
   text-decoration: none;
 }
 
@@ -734,7 +734,7 @@
   margin: 0 0 18px 0;
   font-size: 26px;
   line-height: 1.2;
-  color: #173330;
+  color: #244d2c;
 }
 
 .chart_box {
