@@ -3,12 +3,12 @@
 .register_section_css {
   --bg: #ece7de;
   --card-light: linear-gradient(135deg, #f6f1e9 0%, #efe7dc 100%);
-  --card-dark: linear-gradient(135deg, #173f3a 0%, #1d3a53 100%);
-  --text-dark: #173330;
+  --card-dark: linear-gradient(135deg, #376921 0%, #1d3a53 100%);
+  --text-dark: #4b8f2e;
   --text-soft: #52635d;
   --white-soft: #edf3f1;
-  --primary: #173f3a;
-  --primary-hover: #102f2b;
+  --primary: #4b8f2e;
+  --primary-hover: #5fb43b;
   --border: rgba(23, 51, 48, 0.14);
 
   background-color: var(--bg);
