@@ -1,6 +1,6 @@
 efco2={'Bus':{'Diesel':0.035,'CNG':0.035,'Petrol':0.04,'Electric Europe':0.02},
   'Car':{'Petrol':0.140,'Diesel':0.145,'Electric Nordic':0.015, 'Electric Europe':0.045},
-  'Plane':{'Petrol':0.24298},
+  'Plane':{'Business':0.234, 'First class':0.770, 'Economy':0.155},
   'Ferry':{'Diesel':0.130, 'CNG':0.110, 'Petrol':0.150},
   'Motorbike':{'Petrol':0.100 ,'Electric':0.015},
   'Scooter':{'No Fossil Fuel':0},
