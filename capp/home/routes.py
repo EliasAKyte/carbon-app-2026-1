@@ -6,7 +6,7 @@ home = Blueprint("home", __name__)
 @home.route("/")
 @home.route("/home")
 def home_home():
-    # Velg brukeren du vil vise data for
+   
     user = User.query.filter_by(username="Bjørk").first()
 
     if not user:
@@ -27,13 +27,13 @@ def home_home():
 
     first_transport = user_transports[0] if user_transports else None
 
-    # Query 2
+    
     kms = round(first_transport.kms, 2) if first_transport and first_transport.kms is not None else None
 
-    # Query 3
+ 
     max_kms = max((t.kms for t in user_transports if t.kms is not None), default=None)
 
-    # Query 4
+    
     co2 = round(first_transport.co2, 2) if first_transport and first_transport.co2 is not None else None
     co2_kms = (
         round(first_transport.co2 / first_transport.kms, 2)
@@ -43,7 +43,7 @@ def home_home():
         else None
     )
 
-    # Query 5 og 6
+   
     valid_transports = [
         t for t in user_transports
         if t.co2 is not None and t.kms not in (None, 0)
