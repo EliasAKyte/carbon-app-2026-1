@@ -1,4 +1,4 @@
-/* ===== CARBON APP LANDING PAGE ONLY ===== */
+
 
 .carbon-app-page {
   background-color: #ece7de;
@@ -269,9 +269,6 @@
   }
 }
 
-/* ===== END CARBON APP LANDING PAGE ONLY ===== */
-
-/* ===== CARBON APP SUBPAGES ===== */
 
 .new_entry,
 .table_main,
@@ -324,7 +321,7 @@
   color: #173330;
 }
 
-/* blue info/result card */
+
 .new_entry .container .box:nth-of-type(3) {
   background: linear-gradient(135deg, #5fb43a 0%, #2d6037 100%);
   border-radius: 26px;
@@ -333,17 +330,16 @@
   color: #ffffff;
 }
 
-/* when table_main only has center main card */
+
 .table_main .container .box:nth-of-type(2) {
   max-width: none;
 }
 
-/* main menu center card */
 .main_menu .container .box:nth-of-type(2) {
   max-width: none;
 }
 
-/* typography inside cards */
+
 .new_entry .container .box:nth-of-type(2) h1,
 .new_entry .container .box:nth-of-type(2) h2,
 .new_entry .container .box:nth-of-type(2) h3,
@@ -450,7 +446,7 @@
   box-shadow: 0 0 0 3px rgba(47, 107, 96, 0.12);
 }
 
-/* buttons */
+
 .new_entry .btn,
 .new_entry button,
 .new_entry input[type="submit"],
@@ -487,7 +483,7 @@
   text-decoration: none;
 }
 
-/* links section main menu */
+
 .container_buttons_links_main_menu,
 .section_container_buttons_carbon_app_new_entry_main {
   display: flex;
@@ -517,7 +513,7 @@
   text-decoration: none;
 }
 
-/* tables */
+
 .table_main table {
   width: 100%;
   border-collapse: collapse;
@@ -545,7 +541,7 @@
   border-bottom: none;
 }
 
-/* utility text */
+
 .new_entry p,
 .table_main p,
 .main_menu p {
@@ -561,7 +557,7 @@
   color: inherit;
 }
 
-/* responsive */
+
 @media (max-width: 1100px) {
   .new_entry .container,
   .table_main .container,
@@ -623,9 +619,6 @@
     font-size: 16px;
   }
 }
-
-/* ===== END CARBON APP SUBPAGES ===== */
-/* ===== YOUR DATA PAGE ===== */
 
 .your_data_page {
   background-color: #ece7de;
@@ -837,5 +830,3 @@
     height: 280px;
   }
 }
-
-/* ===== END YOUR DATA PAGE ===== */
