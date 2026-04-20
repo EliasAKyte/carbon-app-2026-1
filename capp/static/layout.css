@@ -50,7 +50,6 @@ img {
   display: block;
 }
 
-/* Header */
 
 .site-header {
   position: sticky;
@@ -125,13 +124,12 @@ img {
   color: #ffffff;
 }
 
-/* Main */
 
 .site-main {
   min-height: 60vh;
 }
 
-/* Footer */
+
 .site-footer{
   background:#ECE7DE;
   padding:80px 0;
@@ -149,7 +147,6 @@ img {
   height:80px;   /* før: 120px */
   background: linear-gradient(135deg, #5fb43a 0%, #2d6037 100%);
 }
-
 
 .footer-content{
   background:#f4efe7;
