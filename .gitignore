@@ -1,18 +1,13 @@
-# Python
-# Byte-code files
 *.pyc
 __pycache__/
 
-# Environments
 .venv/
 env/
 venv/
 ENV/
 
-# Flask instance folder (contains config and database files that are not tracked)
 instance/
 
-# Flask-specific cache/build artifacts
 .pytest_cache/
 .coverage
 htmlcov/
@@ -20,9 +15,6 @@ dist/
 build/
 *.egg-info/
 
-# Editor/IDE-specific files (optional, add as needed)
-# Visual Studio Code
 .vscode/
 
-# JetBrains (PyCharm, etc.)
 .idea/
