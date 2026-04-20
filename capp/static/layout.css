@@ -144,13 +144,13 @@ img {
   overflow:hidden;
   box-shadow:0 16px 32px rgba(0,0,0,0.08);
 }
-/* grønn toppstripe som på kortene */
+
 .footer-header{
   height:80px;   /* før: 120px */
   background: linear-gradient(135deg, #5fb43a 0%, #2d6037 100%);
 }
 
-/* selve innholdet */
+
 .footer-content{
   background:#f4efe7;
   padding:30px 40px 35px 40px;   
