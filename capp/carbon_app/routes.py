@@ -10,25 +10,15 @@ carbon_app=Blueprint('carbon_app',__name__)
 
 #Emissions factor per transport in kg per passemger km
 #Data from: http://efdb.apps.eea.europa.eu/?source=%7B%22query%22%3A%7B%22match_all%22%3A%7B%7D%7D%2C%22display_type%22%3A%22tabular%22%7D
-efco2={'Bus':{'Diesel':0.035,'CNG':0.035,'Petrol':0.04,'Electric Europe':0.02},
-    'Car':{'Petrol':0.140,'Diesel':0.145,'Electric Nordic':0.015, 'Electric Europe':0.045},
-    'Plane':{'Business':0.234, 'First class':0.770, 'Economy':0.155},
-    'Ferry':{'Diesel':0.130, 'CNG':0.110, 'Petrol':0.150},
-    'Motorbike':{'Petrol':0.100,'Electric':0.015},
+efco2={'Bus':{'Diesel':0.025,'Biodiesel':0.007},
+    'Car':{'Petrol':0.167,'Diesel':0.137,'Electric Nordic':0.014, 'Electric Europe':0.045},
+    'Plane':{'Business':0.298,'Economy':0.118},
+    'Ferry':{'Average Ferry':0.226},
+    'Motorbike':{'Petrol':0.052,'Electric':0.017},
     'Scooter':{'No Fossil Fuel':0},
     'Bicycle':{'No Fossil Fuel':0},
     'Walk':{'No Fossil Fuel':0},
-    'Train':{'Diesel':0.090,'Electric':0.007}}
-efch4={'Bus':{'Diesel':0.035,'CNG':0.035,'Petrol':0.04,'Electric Europe':0.02},
-    'Car':{'Petrol':0.140,'Diesel':0.145,'Electric Nordic':0.015, 'Electric Europe':0.045},
-    'Plane':{'Business':0.234, 'First class':0.770, 'Economy':0.155},
-    'Ferry':{'Diesel':0.130, 'CNG':0.110, 'Petrol':0.150},
-    'Motorbike':{'Petrol':0.100,'Electric':0.015},
-    'Scooter':{'No Fossil Fuel':0},
-    'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0},
-    'Train':{'Diesel':0.090,'Electric':0.007}
-}
+    'Train':{'Diesel':0.091,'Electric Europe':0.024, 'Electric Nordic':0.007}}
 
 #Carbon app, main page
 @carbon_app.route('/carbon_app')
@@ -49,14 +39,12 @@ def new_entry_bus():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
+        total = co2
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
         total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -74,14 +62,12 @@ def new_entry_train():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
+        total = co2
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
         total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -100,14 +86,12 @@ def new_entry_car():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
+        total = co2
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
         total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -126,14 +110,12 @@ def new_entry_plane():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
+        total = co2
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
         total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -152,14 +134,12 @@ def new_entry_ferry():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
+        total = co2
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
         total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -178,14 +158,12 @@ def new_entry_motorbike():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
+        total = co2
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
         total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -204,14 +182,12 @@ def new_entry_bicycle():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
+        total = co2
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
         total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -230,14 +206,12 @@ def new_entry_walk():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
+        total = co2
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
         total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
