@@ -27,13 +27,10 @@ db.session.add(transport7)
 db.session.add(transport8) 
 db.session.commit()
 
-#Some basic queries
+
 user1 = User.query.get(1)
 user2 = User.query.get(2)
 transport1 = Transport.query.first()
 transport1.user_id
 transport1.author
 transport1.author.username
-
-#Erase tables and rows
-#db.drop_all()
