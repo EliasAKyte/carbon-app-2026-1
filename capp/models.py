@@ -7,7 +7,7 @@ from flask_login import UserMixin
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-# Database User
+
 class User(db.Model, UserMixin):
     __tablename__ = "user_table"
     id = db.Column(db.Integer, primary_key=True)
@@ -16,7 +16,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
     transport = db.relationship('Transport', backref='author', lazy=True)
 
-# Database Transport
+
 class Transport(db.Model):
     __tablename__= 'transport_table'
     id = db.Column(db.Integer, primary_key=True)
