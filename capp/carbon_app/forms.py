@@ -5,7 +5,7 @@ from wtforms.validators import InputRequired
 class BusForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('Diesel', 'Diesel'), ('CNG', 'CNG'), ('Petrol', 'Petrol'), ('Electric Europe', 'Electric Europe')])
+    choices=[('Diesel', 'Diesel'), ('Biodiesel', 'Biodiesel')])
   submit = SubmitField('Submit')
 
 class CarForm(FlaskForm):
@@ -17,19 +17,19 @@ class CarForm(FlaskForm):
 class TrainForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('Diesel', 'Diesel'), ('Electric', 'Electric')])
+    choices=[('Diesel', 'Diesel'), ('Electric Europe', 'Electric Europe'), ('Electric Nordic', 'Electric Nordic')])
   submit = SubmitField('Submit')  
 
 class PlaneForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
   fuel_type = SelectField('Flight class', [InputRequired()], 
-    choices=[('Business', 'Business'), ('First class', 'First class'), ('Economy', 'Economy')])
+    choices=[('Business', 'Business'), ('Economy', 'Economy')])
   submit = SubmitField('Submit')
   
 class FerryForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('Diesel', 'Diesel'), ('CNG', 'CNG'), ('Petrol', 'Petrol')])
+    choices=[('Average Ferry', 'Average Ferry')])
   submit = SubmitField('Submit')  
 
 class MotorbikeForm(FlaskForm):
@@ -49,5 +49,7 @@ class WalkForm(FlaskForm):
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
     choices=[('No Fossil Fuel', 'No Fossil Fuel')])
   submit = SubmitField('Submit')  
+
+
 
 
