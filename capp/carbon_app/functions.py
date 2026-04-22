@@ -10,5 +10,7 @@ efco2={'Bus':{'Diesel':0.025,'Biodiesel':0.007},
 }
 
 def carbon_emissions(kms, transport, fuel):
-    co2=float(kms)*efco2[transport][fuel]
-    return(co2)
+    co2 = float(kms) * efco2[transport][fuel]
+    co2 = round(co2, 2)
+    total = co2
+    return co2, total
