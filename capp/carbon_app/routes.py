@@ -59,7 +59,7 @@ def new_entry_car():
         fuel = form.fuel_type.data
         transport = 'Car'
         
-       co2, total = carbon_emissions(kms, transport, fuel)
+        co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
@@ -95,7 +95,7 @@ def new_entry_ferry():
         fuel = form.fuel_type.data
         transport = 'Ferry'
         
-      co2, total = carbon_emissions(kms, transport, fuel)
+        co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
@@ -112,8 +112,8 @@ def new_entry_motorbike():
         kms = form.kms.data
         fuel = form.fuel_type.data
         transport = 'Motorbike'
-
-       co2, total = carbon_emissions(kms, transport, fuel)
+        
+        co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
@@ -130,7 +130,7 @@ def new_entry_bicycle():
         kms = form.kms.data
         fuel = form.fuel_type.data
         transport = 'Bicycle'
-      
+        
         co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
