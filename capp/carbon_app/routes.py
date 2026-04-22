@@ -5,20 +5,9 @@ from datetime import timedelta, datetime
 from flask_login import login_required, current_user
 from capp.carbon_app.forms import BusForm, CarForm, PlaneForm, FerryForm, MotorbikeForm, BicycleForm, WalkForm, TrainForm
 import json
+from capp.carbon_app.functions import efco2
 
 carbon_app=Blueprint('carbon_app',__name__)
-
-
-efco2={'Bus':{'Diesel':0.025,'Biodiesel':0.007},
-    'Car':{'Petrol':0.167,'Diesel':0.137,'Electric Nordic':0.014, 'Electric Europe':0.045},
-    'Plane':{'Business':0.298,'Economy':0.118},
-    'Ferry':{'Average Ferry':0.226},
-    'Motorbike':{'Petrol':0.052,'Electric':0.017},
-    'Scooter':{'No Fossil Fuel':0},
-    'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0},
-    'Train':{'Diesel':0.091,'Electric Europe':0.024, 'Electric Nordic':0.007}}
-
 
 @carbon_app.route('/carbon_app')
 @login_required
