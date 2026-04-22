@@ -5,7 +5,7 @@ from datetime import timedelta, datetime
 from flask_login import login_required, current_user
 from capp.carbon_app.forms import BusForm, CarForm, PlaneForm, FerryForm, MotorbikeForm, BicycleForm, WalkForm, TrainForm
 import json
-from capp.carbon_app.functions import efco2
+from capp.carbon_app.functions import efco2, carbon_emissions
 
 carbon_app=Blueprint('carbon_app',__name__)
 
@@ -24,11 +24,7 @@ def new_entry_bus():
         fuel = form.fuel_type.data
         transport = 'Bus'
         
-        co2 = float(kms) * efco2[transport][fuel]
-        total = co2
-
-        co2 = float("{:.2f}".format(co2))
-        total = float("{:.2f}".format(total))
+        co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
@@ -45,12 +41,7 @@ def new_entry_train():
         fuel = form.fuel_type.data
         transport = 'Train'
         
-
-        co2 = float(kms) * efco2[transport][fuel]
-        total = co2
-
-        co2 = float("{:.2f}".format(co2))
-        total = float("{:.2f}".format(total))
+        co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
@@ -68,12 +59,7 @@ def new_entry_car():
         fuel = form.fuel_type.data
         transport = 'Car'
         
-
-        co2 = float(kms) * efco2[transport][fuel]
-        total = co2
-
-        co2 = float("{:.2f}".format(co2))
-        total = float("{:.2f}".format(total))
+       co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
@@ -91,11 +77,7 @@ def new_entry_plane():
         fuel = form.fuel_type.data
         transport = 'Plane'
         
-        co2 = float(kms) * efco2[transport][fuel]
-        total = co2
-
-        co2 = float("{:.2f}".format(co2))
-        total = float("{:.2f}".format(total))
+        co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
@@ -113,11 +95,7 @@ def new_entry_ferry():
         fuel = form.fuel_type.data
         transport = 'Ferry'
         
-        co2 = float(kms) * efco2[transport][fuel]
-        total = co2
-
-        co2 = float("{:.2f}".format(co2))
-        total = float("{:.2f}".format(total))
+      co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
@@ -134,13 +112,8 @@ def new_entry_motorbike():
         kms = form.kms.data
         fuel = form.fuel_type.data
         transport = 'Motorbike'
-       
 
-        co2 = float(kms) * efco2[transport][fuel]
-        total = co2
-
-        co2 = float("{:.2f}".format(co2))
-        total = float("{:.2f}".format(total))
+       co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
@@ -158,12 +131,7 @@ def new_entry_bicycle():
         fuel = form.fuel_type.data
         transport = 'Bicycle'
       
-
-        co2 = float(kms) * efco2[transport][fuel]
-        total = co2
-
-        co2 = float("{:.2f}".format(co2))
-        total = float("{:.2f}".format(total))
+        co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
@@ -181,12 +149,7 @@ def new_entry_walk():
         fuel = form.fuel_type.data
         transport = 'Walk'
         
-
-        co2 = float(kms) * efco2[transport][fuel]
-        total = co2
-
-        co2 = float("{:.2f}".format(co2))
-        total = float("{:.2f}".format(total))
+        co2, total = carbon_emissions(kms, transport, fuel)
 
         emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
         db.session.add(emissions)
