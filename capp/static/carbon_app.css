@@ -275,14 +275,14 @@
   text-align: left;
 }
 
-/* side spacers */
+
 .new_entry .container .box:nth-of-type(1),
 .new_entry .container .box:nth-of-type(4) {
   background: transparent;
   min-height: 1px;
 }
 
-/* green card */
+
 .new_entry .container .box:nth-of-type(2) {
   background: linear-gradient(135deg, #f6f1e9 0%, #efe7dc 100%);
   border-radius: 26px;
@@ -662,4 +662,12 @@
   .chart_box {
     height: 280px;
   }
+}
+.carbon-app-page .carbon-app-visual-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.carbon-app-page .carbon-app-visual-card:hover {
+  transform: scale(1.4);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.16);
 }
